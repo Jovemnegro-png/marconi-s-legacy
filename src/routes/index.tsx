@@ -58,12 +58,6 @@ function HomePage() {
               <span><Star aria-hidden="true" /><b>Qualidade<br />em cada detalhe</b></span>
             </div>
           </div>
-          <div className="hero-logo" aria-label="Marconi Barbearia Est 2019">
-            <div className="hero-logo-tools"><span>╲</span><Scissors aria-hidden="true" /><span>╱</span></div>
-            <strong>MARCONI</strong>
-            <span>BARBEARIA</span>
-            <small>Est 2019</small>
-          </div>
           <Link to="/servicos" className="hero-scroll" aria-label="Conheça os serviços"><span>ROLE PARA DESCOBRIR MAIS</span><ArrowDown size={15} aria-hidden="true" /></Link>
         </div>
       </section>
