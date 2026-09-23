@@ -1,0 +1,3 @@
+- [x] Criar identidade visual e imagens para a Barbearia Marconi.
+- [x] Construir páginas de início, serviços, sobre e contato com agendamento por WhatsApp.
+- [ ] Verificar navegação, aparência responsiva e links no navegador.
