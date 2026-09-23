@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight, Star } from "lucide-react";
+import { ArrowDown, ArrowUpRight, CalendarDays, Scissors, ShieldCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL, MAPS_URL } from "@/lib/site";
 import heroImage from "@/assets/marconi-hero.jpg";
@@ -44,17 +44,27 @@ function HomePage() {
   return (
     <>
       <section className="hero" aria-labelledby="hero-title">
-        <img className="hero-image" src={heroImage} alt="Barbeiro trabalhando com tesoura e pente em um corte masculino" width={1920} height={1088} fetchPriority="high" />
+        <img className="hero-image" src={heroImage} alt="Interior de uma barbearia Marconi" width={1920} height={1088} fetchPriority="high" />
         <div className="hero-shade" />
         <div className="site-container hero-content">
           <div className="hero-copy">
-            <span className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> RUA MARCONI, 67 · REPÚBLICA</span>
-            <h1 id="hero-title">Barbearia<br /><em>Marconi.</em></h1>
-            <p>O cuidado de sempre. A presença de agora.</p>
-            <Button asChild variant="primary" size="premium"><a href="/agendamento">Agendar horário <ArrowUpRight aria-hidden="true" /></a></Button>
+            <span className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> MAIS QUE UMA BARBEARIA</span>
+            <h1 id="hero-title">A SUA MELHOR<br />VERSÃO, <em>SEMPRE.</em></h1>
+            <p>Corte, barba e estilo em um só lugar. Aqui, cada detalhe é pensado para realçar o que te faz único.</p>
+            <Button asChild variant="primary" size="premium"><a href="/agendamento"><CalendarDays aria-hidden="true" /> Agendar horário <ArrowUpRight aria-hidden="true" /></a></Button>
+            <div className="hero-benefits">
+              <span><Scissors aria-hidden="true" /><b>Profissionais<br />especializados</b></span>
+              <span><ShieldCheck aria-hidden="true" /><b>Ambiente<br />aconchegante</b></span>
+              <span><Star aria-hidden="true" /><b>Qualidade<br />em cada detalhe</b></span>
+            </div>
           </div>
-          <Link to="/servicos" className="hero-scroll" aria-label="Conheça os serviços"><ArrowDown size={15} aria-hidden="true" /> EXPLORE</Link>
-          <span className="hero-side-label">SÃO PAULO · SP</span>
+          <div className="hero-logo" aria-label="Marconi Barbearia Est 2019">
+            <div className="hero-logo-tools"><span>╲</span><Scissors aria-hidden="true" /><span>╱</span></div>
+            <strong>MARCONI</strong>
+            <span>BARBEARIA</span>
+            <small>Est 2019</small>
+          </div>
+          <Link to="/servicos" className="hero-scroll" aria-label="Conheça os serviços"><span>ROLE PARA DESCOBRIR MAIS</span><ArrowDown size={15} aria-hidden="true" /></Link>
         </div>
       </section>
 
