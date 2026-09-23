@@ -41,7 +41,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             ))}
           </nav>
           <Button asChild variant="header" className="header-booking">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <a href="/agendamento">
               Agendar horário <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
@@ -65,7 +65,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
               </Link>
             ))}
             <Button asChild variant="primary" className="mt-6 w-full">
-              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp <ArrowUpRight aria-hidden="true" /></a>
+              <a href="/agendamento">Agendar horário <ArrowUpRight aria-hidden="true" /></a>
             </Button>
           </nav>
         )}
