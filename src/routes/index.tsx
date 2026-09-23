@@ -18,6 +18,24 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/" }],
+    scripts: [{
+      type: "application/ld+json",
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Barbershop",
+        name: "Barbearia Marconi",
+        telephone: "+55 11 99464-8174",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Rua Marconi, 67",
+          addressLocality: "São Paulo",
+          addressRegion: "SP",
+          postalCode: "01004-000",
+          addressCountry: "BR",
+        },
+        aggregateRating: { "@type": "AggregateRating", ratingValue: "4.8", ratingCount: "786", bestRating: "5" },
+      }),
+    }],
   }),
   component: HomePage,
 });
