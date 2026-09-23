@@ -51,7 +51,7 @@ function HomePage() {
             <span className="eyebrow hero-eyebrow"><span className="eyebrow-line" /> RUA MARCONI, 67 · REPÚBLICA</span>
             <h1 id="hero-title">Barbearia<br /><em>Marconi.</em></h1>
             <p>O cuidado de sempre. A presença de agora.</p>
-            <Button asChild variant="primary" size="premium"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Agendar meu horário <ArrowUpRight aria-hidden="true" /></a></Button>
+            <Button asChild variant="primary" size="premium"><a href="/agendamento">Agendar horário <ArrowUpRight aria-hidden="true" /></a></Button>
           </div>
           <Link to="/servicos" className="hero-scroll" aria-label="Conheça os serviços"><ArrowDown size={15} aria-hidden="true" /> EXPLORE</Link>
           <span className="hero-side-label">SÃO PAULO · SP</span>
@@ -149,7 +149,7 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="closing-section"><div className="site-container closing-inner"><span className="eyebrow">O PRÓXIMO HORÁRIO É SEU</span><h2>Seu melhor visual<br />começa <em>aqui.</em></h2><Button asChild variant="primary" size="premium"><a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp <ArrowUpRight aria-hidden="true" /></a></Button><p>Ou ligue: <a href="tel:+5511994648174">+55 11 99464-8174</a></p></div></section>
+      <section className="closing-section"><div className="site-container closing-inner"><span className="eyebrow">O PRÓXIMO HORÁRIO É SEU</span><h2>Seu melhor visual<br />começa <em>aqui.</em></h2><Button asChild variant="primary" size="premium"><a href="/agendamento">Agendar horário <ArrowUpRight aria-hidden="true" /></a></Button><p>Ou ligue: <a href="tel:+5511994648174">+55 11 99464-8174</a></p></div></section>
     </>
   );
 }
