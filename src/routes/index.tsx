@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL, MAPS_URL } from "@/lib/site";
 import heroImage from "@/assets/marconi-hero.jpg";
@@ -98,6 +98,47 @@ function HomePage() {
             </Link>
           </div>
           <Link to="/servicos" className="text-link mobile-text-link">Ver todos os serviços <ArrowUpRight size={17} aria-hidden="true" /></Link>
+        </div>
+      </section>
+
+      <section className="google-reviews-section" aria-labelledby="google-reviews-title">
+        <div className="site-container">
+          <div className="section-header reviews-header">
+            <div>
+              <span className="eyebrow"><span className="eyebrow-line" /> EXPERIÊNCIAS REAIS</span>
+              <h2 id="google-reviews-title">Avaliações do <em>Google.</em></h2>
+            </div>
+            <span className="reviews-source">DEPOIMENTOS DE CLIENTES</span>
+          </div>
+          <div className="reviews-grid">
+            <article className="review-card">
+              <div className="review-card-top">
+                <div className="review-author">
+                  <img src="https://lh3.googleusercontent.com/a-/ALV-UjWRsaDTc08o6I3fxfiAuHuYSsYAuaOnSdE49fAoR3xZuL4bDa_P=w45-h45-p-rp-mo-ba12-br100" alt="" width={45} height={45} loading="lazy" />
+                  <div><strong>Star Vidros</strong><span>Local Guide · 14 avaliações · 1 foto</span></div>
+                </div>
+                <span className="review-google">Google</span>
+              </div>
+              <div className="review-stars" aria-label="5 de 5 estrelas">{[1, 2, 3, 4, 5].map((star) => <Star key={star} size={15} fill="currentColor" aria-hidden="true" />)}</div>
+              <span className="review-date">3 meses atrás</span>
+              <p>“Excelente! Nível de atendimento premium!”</p>
+              <div className="review-actions"><span>👍 Gostei</span><span>↗ Compartilhar</span></div>
+            </article>
+
+            <article className="review-card">
+              <div className="review-card-top">
+                <div className="review-author">
+                  <img src="https://lh3.googleusercontent.com/a-/ALV-UjXoelOxpOXbqD3_aKGIQQ-ewxdKxCWMyEiDKCPevwOmN8XOFq2NKQ=w45-h45-p-rp-mo-br100" alt="" width={45} height={45} loading="lazy" />
+                  <div><strong>jhonata anjos</strong><span>2 avaliações</span></div>
+                </div>
+                <span className="review-google">Google</span>
+              </div>
+              <div className="review-stars" aria-label="5 de 5 estrelas">{[1, 2, 3, 4, 5].map((star) => <Star key={star} size={15} fill="currentColor" aria-hidden="true" />)}</div>
+              <span className="review-date">6 meses atrás</span>
+              <p>“Otimo ambiente, otimos profissionais. O mais alto nivel de barbearia da cidade de Jundiaí.”</p>
+              <div className="review-actions"><span>👍 Gostei</span><span>↗ Compartilhar</span></div>
+            </article>
+          </div>
         </div>
       </section>
 
