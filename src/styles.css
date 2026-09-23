@@ -106,12 +106,6 @@ h1 em, h2 em { color: var(--primary); font-weight: 400; }
 .hero-benefits span { display: flex; align-items: center; gap: 11px; color: #f1ede4; font-size: 10px; line-height: 1.55; }
 .hero-benefits svg { width: 23px; height: 23px; color: var(--primary); flex: 0 0 auto; }
 .hero-benefits b { font-weight: 500; }
-.hero-logo { position: absolute; right: 7%; top: 50%; transform: translateY(-54%); width: min(42vw, 600px); aspect-ratio: 1; border-radius: 50%; background: rgba(0,0,0,.62); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; box-shadow: 0 0 90px rgba(0,0,0,.35); color: #fff; }
-.hero-logo strong { font-family: var(--font-display); font-size: clamp(45px, 5.4vw, 82px); letter-spacing: .2em; font-weight: 600; line-height: 1; }
-.hero-logo > span { font-family: var(--font-display); font-size: clamp(18px, 2vw, 30px); letter-spacing: .12em; margin-top: 18px; }
-.hero-logo small { margin-top: 12px; font-family: var(--font-display); font-size: 12px; letter-spacing: .12em; }
-.hero-logo-tools { display: flex; align-items: center; gap: 13px; position: absolute; top: 17%; color: #fff; font-size: 42px; }
-.hero-logo-tools svg { width: 90px; height: 90px; transform: rotate(-45deg); }
 .hero-scroll { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 9px; color: rgba(255,255,255,.7); font-size: 9px; font-weight: 700; letter-spacing: .22em; transition: color .2s; }
 .hero-scroll:hover { color: var(--primary); }
 .proof-band { background: var(--surface-deep); border-bottom: 1px solid var(--border); }
@@ -351,5 +345,5 @@ h1 em, h2 em { color: var(--primary); font-weight: 400; }
   .booking-actions { align-items: flex-start; flex-direction: column; }
 }
 
-@media (max-width: 900px) { .hero { min-height: 760px; } .hero-logo { right: -9%; width: 58vw; opacity: .78; } .hero-copy { max-width: 58%; } .hero-benefits { gap: 17px; flex-wrap: wrap; margin-top: 42px; } }
-@media (max-width: 650px) { .hero { min-height: 780px; height: auto; } .hero-image { object-position: 60% center; } .hero-shade { background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.9) 78%); } .hero-content { align-items: flex-end; padding-bottom: 72px; } .hero-copy { max-width: 100%; padding-bottom: 55px; } .hero h1 { font-size: 58px; } .hero-logo { top: 22%; right: -12%; width: 72vw; opacity: .48; } .hero-benefits { margin-top: 35px; } .hero-benefits span { font-size: 9px; } .hero-scroll { bottom: 18px; } }
+@media (max-width: 900px) { .hero { min-height: 760px; } .hero-copy { max-width: 58%; } .hero-benefits { gap: 17px; flex-wrap: wrap; margin-top: 42px; } }
+@media (max-width: 650px) { .hero { min-height: 780px; height: auto; } .hero-image { object-position: 60% center; } .hero-shade { background: linear-gradient(180deg, rgba(0,0,0,.62), rgba(0,0,0,.9) 78%); } .hero-content { align-items: flex-end; padding-bottom: 72px; } .hero-copy { max-width: 100%; padding-bottom: 55px; } .hero h1 { font-size: 58px; } .hero-benefits { margin-top: 35px; } .hero-benefits span { font-size: 9px; } .hero-scroll { bottom: 18px; } }
