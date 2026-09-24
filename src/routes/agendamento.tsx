@@ -198,6 +198,9 @@ function BookingPage() {
             <p className="booking-form-disclaimer">
               <MessageCircle size={14} /> O horário é apenas solicitado nesta etapa. A confirmação será feita pela equipe pelo WhatsApp.
             </p>
+            <p className="booking-form-disclaimer">
+              Ao enviar, você concorda com o uso dos dados informados para responder à sua solicitação, conforme nossa <Link to="/privacidade" className="text-link">Política de Privacidade</Link>.
+            </p>
           </div>
 
           <aside className="booking-aside">
