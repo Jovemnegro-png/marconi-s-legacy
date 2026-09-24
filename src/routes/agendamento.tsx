@@ -76,6 +76,11 @@ function BookingPage() {
       ". Telefone/WhatsApp: " + phone +
       ". Aguardo a confirmação do horário por aqui.",
     );
+    const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
+
+    function openWhatsApp() {
+      window.top.location.href = whatsappUrl;
+    }
 
     return (
       <section className="booking-page">
@@ -103,10 +108,8 @@ function BookingPage() {
 
           <div className="booking-actions">
             <Link to="/" className="text-link"><ArrowLeft size={17} /> Voltar ao início</Link>
-            <Button asChild variant="primary" size="premium">
-              <a href={WHATSAPP_URL + "?text=" + whatsappMessage} target="_blank" rel="noopener noreferrer">
-                Enviar pelo WhatsApp <ArrowUpRight />
-              </a>
+            <Button type="button" variant="primary" size="premium" onClick={openWhatsApp}>
+              Enviar pelo WhatsApp <ArrowUpRight />
             </Button>
           </div>
         </div>
