@@ -82,7 +82,10 @@ function BookingPage() {
       "Obrigado!",
     ].join("\n");
 
-    const whatsappUrl = new URL(WHATSAPP_URL);
+    // Use WhatsApp's direct send endpoint instead of wa.me. On desktop, wa.me can
+    // replace UTF-8 emoji with U+FFFD during its redirect to the send page.
+    const whatsappUrl = new URL("https://api.whatsapp.com/send");
+    whatsappUrl.searchParams.set("phone", new URL(WHATSAPP_URL).pathname.replace(/\D/g, ""));
     whatsappUrl.searchParams.set("text", whatsappMessage);
 
     return (
