@@ -84,6 +84,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <Link to="/servicos">Serviços</Link>
             <Link to="/sobre">A barbearia</Link>
             <Link to="/contato">Contato</Link>
+            <Link to="/privacidade">Política de Privacidade</Link>
           </div>
           <div className="footer-column footer-address">
             <span className="eyebrow">Encontre-nos</span>
