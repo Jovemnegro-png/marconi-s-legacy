@@ -1,5 +1,5 @@
 export const WHATSAPP_URL =
-  "https://wa.me/5583999075713?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Marconi.";
+  "https://api.whatsapp.com/send?phone=5583999075713&text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio%20na%20Barbearia%20Marconi.";
 
 export const PHONE_URL = "tel:+5511994648174";
 export const MAPS_URL =
