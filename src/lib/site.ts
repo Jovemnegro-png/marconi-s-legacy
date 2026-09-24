@@ -1,6 +1,6 @@
-// Lovable sync marker: keep WhatsApp links on the direct wa.me domain.
+// WhatsApp oficial da Barbearia Marconi.
 export const WHATSAPP_URL =
-  "https://wa.me/5583999075713";
+  "https://wa.me/5511994648174";
 
 export const PHONE_URL = "tel:+5511994648174";
 export const MAPS_URL =
