@@ -67,18 +67,23 @@ function BookingPage() {
   }
 
   if (submitted) {
-    const whatsappMessage = encodeURIComponent(
-      "Olá! Tudo bem? 👋\n\n" +
-      "Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.\n\n" +
-      "✂️ Serviço: " + selected.name +
-      "\n📅 Data: " + formatDate(date) +
-      "\n🕘 Horário solicitado: " + time +
-      "\n👤 Nome: " + name +
-      "\n📱 WhatsApp: " + phone +
-      "\n\nFico no aguardo da confirmação da equipe. Será um prazer estar com vocês! ✨\n\n" +
+    const whatsappMessage = [
+      "Olá! Tudo bem? " + String.fromCodePoint(0x1F44B),
+      "",
+      "Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.",
+      "",
+      String.fromCodePoint(0x2702, 0xFE0F) + " Serviço: " + selected.name,
+      String.fromCodePoint(0x1F4C5) + " Data: " + formatDate(date),
+      String.fromCodePoint(0x1F558) + " Horário solicitado: " + time,
+      String.fromCodePoint(0x1F464) + " Nome: " + name,
+      String.fromCodePoint(0x1F4F1) + " WhatsApp: " + phone,
+      "",
+      "Fico no aguardo da confirmação da equipe. Será um prazer estar com vocês! " + String.fromCodePoint(0x2728),
+      "",
       "Obrigado!",
-    );
-    const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
+    ].join("\n");
+
+    const whatsappUrl = WHATSAPP_URL + "?text=" + encodeURIComponent(whatsappMessage);
 
     return (
       <section className="booking-page">
