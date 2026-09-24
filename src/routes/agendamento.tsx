@@ -43,11 +43,10 @@ function BookingPage() {
 
   const selected = useMemo(() => services.find(item => item.id === service) ?? services[0], [service]);
   const minDate = getLocalDate();
+  const isSunday = date ? new Date(date + "T12:00:00").getDay() === 0 : false;
 
   function submit(event: React.FormEvent) {
     event.preventDefault();
-    const selectedDate = date ? new Date(date + "T12:00:00") : null;
-    const isSunday = selectedDate?.getDay() === 0;
 
     if (!date || !time || !name || !phone || isSunday) return;
 
@@ -152,11 +151,16 @@ function BookingPage() {
               onChange={event => { setDate(event.target.value); setTime(""); }}
               required
             />
+            {isSunday && (
+              <p className="booking-form-disclaimer">
+                A Barbearia Marconi não atende aos domingos. Escolha uma data de segunda a sábado.
+              </p>
+            )}
 
             <div className="booking-step"><span>03</span><div><label>Escolha o horário desejado</label><small>{date ? formatDate(date) : "Selecione uma data primeiro"}</small></div></div>
             <div className="booking-times">
               {times.map(item => (
-                <button type="button" key={item} disabled={!date} className={time === item ? "booking-time is-selected" : "booking-time"} onClick={() => setTime(item)}>
+                <button type="button" key={item} disabled={!date || isSunday} className={time === item ? "booking-time is-selected" : "booking-time"} onClick={() => setTime(item)}>
                   {item}
                 </button>
               ))}
@@ -168,7 +172,7 @@ function BookingPage() {
               <input className="booking-input" placeholder="WhatsApp / telefone" type="tel" value={phone} onChange={event => setPhone(event.target.value)} required />
             </div>
 
-            <Button type="submit" variant="primary" size="premium" className="booking-submit" disabled={!date || !time || !name || !phone}>
+            <Button type="submit" variant="primary" size="premium" className="booking-submit" disabled={!date || !time || !name || !phone || isSunday}>
               Enviar solicitação <ArrowUpRight />
             </Button>
             <p className="booking-form-disclaimer">
