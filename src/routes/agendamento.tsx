@@ -23,6 +23,14 @@ function getLocalDate() {
   return new Date(now.getTime() - offset * 60_000).toISOString().slice(0, 10);
 }
 
+function getLocalTime() {
+  return new Intl.DateTimeFormat("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).format(new Date());
+}
+
 export const Route = createFileRoute("/agendamento")({
   head: () => ({
     meta: [
@@ -43,12 +51,14 @@ function BookingPage() {
 
   const selected = useMemo(() => services.find(item => item.id === service) ?? services[0], [service]);
   const minDate = getLocalDate();
+  const currentTime = getLocalTime();
   const isSunday = date ? new Date(date + "T12:00:00").getDay() === 0 : false;
+  const isPastTime = date === minDate && !!time && time <= currentTime;
 
   function submit(event: React.FormEvent) {
     event.preventDefault();
 
-    if (!date || !time || !name || !phone || isSunday) return;
+    if (!date || !time || !name || !phone || isSunday || isPastTime) return;
 
     localStorage.setItem(
       "marconi:last-booking",
@@ -164,7 +174,13 @@ function BookingPage() {
             <div className="booking-step"><span>03</span><div><label>Escolha o horário desejado</label><small>{date ? formatDate(date) : "Selecione uma data primeiro"}</small></div></div>
             <div className="booking-times">
               {times.map(item => (
-                <button type="button" key={item} disabled={!date || isSunday} className={time === item ? "booking-time is-selected" : "booking-time"} onClick={() => setTime(item)}>
+                <button
+                  type="button"
+                  key={item}
+                  disabled={!date || isSunday || (date === minDate && item <= currentTime)}
+                  className={time === item ? "booking-time is-selected" : "booking-time"}
+                  onClick={() => setTime(item)}
+                >
                   {item}
                 </button>
               ))}
@@ -176,7 +192,7 @@ function BookingPage() {
               <input className="booking-input" placeholder="WhatsApp / telefone" type="tel" value={phone} onChange={event => setPhone(event.target.value)} required />
             </div>
 
-            <Button type="submit" variant="primary" size="premium" className="booking-submit" disabled={!date || !time || !name || !phone || isSunday}>
+            <Button type="submit" variant="primary" size="premium" className="booking-submit" disabled={!date || !time || !name || !phone || isSunday || isPastTime}>
               Enviar solicitação <ArrowUpRight />
             </Button>
             <p className="booking-form-disclaimer">
