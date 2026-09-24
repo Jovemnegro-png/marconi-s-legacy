@@ -78,13 +78,6 @@ function BookingPage() {
     );
     const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
 
-    function openWhatsApp() {
-      const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-      if (!opened) {
-        window.location.href = whatsappUrl;
-      }
-    }
-
     return (
       <section className="booking-page">
         <div className="site-container booking-confirmation">
@@ -111,8 +104,10 @@ function BookingPage() {
 
           <div className="booking-actions">
             <Link to="/" className="text-link"><ArrowLeft size={17} /> Voltar ao início</Link>
-            <Button type="button" variant="primary" size="premium" onClick={openWhatsApp}>
-              Enviar pelo WhatsApp <ArrowUpRight />
+            <Button asChild variant="primary" size="premium">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                Enviar pelo WhatsApp <ArrowUpRight />
+              </a>
             </Button>
           </div>
         </div>
