@@ -68,13 +68,15 @@ function BookingPage() {
 
   if (submitted) {
     const whatsappMessage = encodeURIComponent(
-      "Olá! Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.\n\n" +
+      "Olá! Tudo bem? 👋\n\n" +
+      "Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.\n\n" +
       "✂️ Serviço: " + selected.name +
       "\n📅 Data: " + formatDate(date) +
       "\n🕘 Horário solicitado: " + time +
       "\n👤 Nome: " + name +
       "\n📱 WhatsApp: " + phone +
-      "\n\nAguardo a confirmação da equipe. Obrigado!",
+      "\n\nFico no aguardo da confirmação da equipe. Será um prazer estar com vocês! ✨\n\n" +
+      "Obrigado!",
     );
     const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
 
