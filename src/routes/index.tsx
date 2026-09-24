@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight, CalendarDays, Scissors, ShieldCheck, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WHATSAPP_URL, MAPS_URL } from "@/lib/site";
-import heroImage from "@/assets/marconi-hero.jpg";
+import heroImage from "@/assets/marconi-hero-final.webp";
 import corteImage from "@/assets/marconi-corte.jpg";
 import barbaImage from "@/assets/marconi-barba.jpg";
 
