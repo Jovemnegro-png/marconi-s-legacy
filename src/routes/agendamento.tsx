@@ -79,7 +79,10 @@ function BookingPage() {
     const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
 
     function openWhatsApp() {
-      window.top.location.href = whatsappUrl;
+      const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        window.location.href = whatsappUrl;
+      }
     }
 
     return (
