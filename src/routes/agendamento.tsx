@@ -67,22 +67,23 @@ function BookingPage() {
 
   if (submitted) {
     const whatsappMessage = [
-      "Olá! Tudo bem?",
+      "Olá! Tudo bem? " + String.fromCodePoint(0x1F44B),
       "",
       "Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.",
       "",
-      "Serviço: " + selected.name,
-      "Data: " + formatDate(date),
-      "Horário solicitado: " + time,
-      "Nome: " + name,
-      "WhatsApp: " + phone,
+      String.fromCodePoint(0x2702, 0xFE0F) + " Serviço: " + selected.name,
+      String.fromCodePoint(0x1F4C5) + " Data: " + formatDate(date),
+      String.fromCodePoint(0x1F558) + " Horário solicitado: " + time,
+      String.fromCodePoint(0x1F464) + " Nome: " + name,
+      String.fromCodePoint(0x1F4F1) + " WhatsApp: " + phone,
       "",
-      "Fico no aguardo da confirmação da equipe. Será um prazer estar com vocês!",
+      "Fico no aguardo da confirmação da equipe. Será um prazer estar com vocês! " + String.fromCodePoint(0x2728),
       "",
       "Obrigado!",
     ].join("\n");
 
-    const whatsappUrl = WHATSAPP_URL + "?text=" + encodeURIComponent(whatsappMessage);
+    const whatsappUrl = new URL(WHATSAPP_URL);
+    whatsappUrl.searchParams.set("text", whatsappMessage);
 
     return (
       <section className="booking-page">
