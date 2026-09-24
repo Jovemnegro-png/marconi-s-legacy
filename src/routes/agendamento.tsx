@@ -68,22 +68,17 @@ function BookingPage() {
 
   if (submitted) {
     const whatsappMessage = encodeURIComponent(
-      "Olá! Acabei de enviar uma solicitação de agendamento na Barbearia Marconi. " +
-      "Serviço: " + selected.name +
-      ". Data: " + formatDate(date) +
-      ". Horário solicitado: " + time +
-      ". Nome: " + name +
-      ". Telefone/WhatsApp: " + phone +
-      ". Aguardo a confirmação do horário por aqui.",
+      "Olá! Tudo bem? 👋\n\n" +
+      "Gostaria de solicitar a confirmação do meu horário na Barbearia Marconi.\n\n" +
+      "✂️ Serviço: " + selected.name +
+      "\n📅 Data: " + formatDate(date) +
+      "\n🕘 Horário solicitado: " + time +
+      "\n👤 Nome: " + name +
+      "\n📱 WhatsApp: " + phone +
+      "\n\nFico no aguardo da confirmação da equipe. Será um prazer estar com vocês! ✨\n\n" +
+      "Obrigado!",
     );
     const whatsappUrl = WHATSAPP_URL + "?text=" + whatsappMessage;
-
-    function openWhatsApp() {
-      const opened = window.open(whatsappUrl, "_blank", "noopener,noreferrer");
-      if (!opened) {
-        window.location.href = whatsappUrl;
-      }
-    }
 
     return (
       <section className="booking-page">
@@ -111,8 +106,10 @@ function BookingPage() {
 
           <div className="booking-actions">
             <Link to="/" className="text-link"><ArrowLeft size={17} /> Voltar ao início</Link>
-            <Button type="button" variant="primary" size="premium" onClick={openWhatsApp}>
-              Enviar pelo WhatsApp <ArrowUpRight />
+            <Button asChild variant="primary" size="premium">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                Enviar pelo WhatsApp <ArrowUpRight />
+              </a>
             </Button>
           </div>
         </div>
