@@ -1,3 +1,4 @@
+// Lovable sync marker: keep WhatsApp links on the direct wa.me domain.
 export const WHATSAPP_URL =
   "https://wa.me/5583999075713";
 
